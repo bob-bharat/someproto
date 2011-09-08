@@ -1,0 +1,187 @@
+<?php session_start();
+require_once 'app/model/dao/user/UserDAO.php'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="Generator" content="iWeb 3.0.4" />
+    <meta name="iWeb-Build" content="local-build-20110904" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <meta name="viewport" content="width=700" />
+    <title>HummingTown</title>
+    <link rel="stylesheet" type="text/css" media="screen,print" href="Welcome_files/Welcome.css" />
+    <!--[if lt IE 8]><link rel='stylesheet' type='text/css' media='screen,print' href='Welcome_files/WelcomeIE.css'/><![endif]-->
+    <!--[if gte IE 8]><link rel='stylesheet' type='text/css' media='screen,print' href='Media/IE8.css'/><![endif]-->
+    <script type="text/javascript" src="Scripts/iWebSite.js"></script>
+    <script type="text/javascript" src="Scripts/Widgets/SharedResources/WidgetCommon.js"></script>
+    <script type="text/javascript" src="Scripts/Widgets/Navbar/navbar.js"></script>
+    <script type="text/javascript" src="Scripts/iWebImage.js"></script>
+    <script type="text/javascript" src="Welcome_files/Welcome.js"></script>
+  </head>
+  <body style="background: rgb(101, 101, 101); margin: 0pt; " onload="onPageLoad();" onunload="onPageUnload();">
+    <div style="text-align: center; ">
+      <div style="margin-bottom: 10px; margin-left: auto; margin-right: auto; margin-top: 10px; overflow: hidden; position: relative; word-wrap: break-word;  background: rgb(255, 255, 255); text-align: left; width: 700px; " id="body_content">
+        <div style="margin-left: 0px; position: relative; width: 700px; z-index: 0; " id="nav_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper">Ê</div>
+          <div class="com-apple-iweb-widget-navbar flowDefining" id="widget0" style="margin-left: 20px; margin-top: 0px; opacity: 1.00; position: relative; width: 660px; z-index: 1; ">
+    
+            <div id="widget0-navbar" class="navbar">
+
+      
+              <div id="widget0-bg" class="navbar-bg">
+
+        
+                <ul id="widget0-navbar-list" class="navbar-list">
+ <li></li> 
+</ul>
+                
+      
+</div>
+              
+    
+</div>
+          </div>
+          <script type="text/javascript"><!--//--><![CDATA[//><!--
+new NavBar('widget0', 'Scripts/Widgets/Navbar', 'Scripts/Widgets/SharedResources', '.', {"path-to-root": "", "navbar-css": ".navbar {\n\tfont-family: 'Helvetica Neue', Arial, sans-serif;\n\tfont-size: .8em;\n\tcolor: #666666;\n\tline-height: 30px;\n\tborder-bottom: 3px solid #ccc;\n}\n\n.navbar-bg {\n\ttext-align: right;}\n\n.navbar-bg ul {\n\tlist-style: none;\n\tmargin: 0px;\n\tpadding: 0px;\n}\n\n\nli {\n\tlist-style-type: none;\n\tdisplay: inline;\n\tpadding: 0px 5px 0px 0px;\n}\n\n\nli a {\n\ttext-decoration: none;\n\tpadding: 10px;\n\tcolor: #666666;\n\tfont-weight: bold;\n}\n\nli a:visited {\n\ttext-decoration: none;\n\tpadding: 10px;\n\tcolor: #666666;\n\tfont-weight: bold;\n}\n\nli a:hover\r{\r\n \tcolor: #999999;\n\ttext-decoration: none;\r}\n\n\nli.current-page a\r{\r\t color: #66ABC5;\n\ttext-decoration: none;\r}", "current-page-GUID": "35BABFCD-8832-4634-9517-EE833E548EEE", "isCollectionPage": "NO"});
+//--><!]]></script>
+          <div style="clear: both; height: 0px; line-height: 0px; " class="spacer">Ê</div>
+        </div>
+        <div style="height: 75px; margin-left: 0px; position: relative; width: 700px; z-index: 10; " id="header_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper">Ê</div>
+          <div id="id1" style="height: 43px; left: 20px; position: absolute; top: 17px; width: 251px; z-index: 1; " class="style_SkipStroke shape-with-text">
+            <div class="text-content style_External_251_43" style="padding: 0px; ">
+              <div class="style">
+                <p style="padding-bottom: 0pt; padding-top: 0pt; " class="Header">HummingTown</p>
+              </div>
+            </div>
+          </div>
+          
+
+        </div>
+        
+          <div style="height: 75px; margin-left: 0px; position: relative; width: 700px; z-index: 10; " id="header_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper">Ê</div>
+<div id="id2" style="height: 43px; left: 20px; position: absolute; top: 17px; width: 251px; z-index: 1; " class="style_SkipStroke shape-with-text">
+            <div class="text-content style_External_251_43" style="padding: 0px; ">
+              <div class="style">
+                <form name="search" action="moviesearch.php" method="get">
+                <input type="text" name="movie" />
+                <input type="submit" name="submit" value="Search" onclick="this.search.submit();"/>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <?php if (empty($_SESSION['user'])) {?>
+          <div id="id9" style="height: 43px; left: 363px; position: absolute; top: 17px; width: 251px; z-index: 1; " class="style_SkipStroke shape-with-text">
+            <div class="text-content style_External_251_43" style="padding: 0px; ">
+              <div class="style">
+                <form name="login" action="login.php" method="post">
+                Username : <input type="text" name="user" />
+                Password : <input type="password" name="pass" />
+                <input type="submit" name="login_btn" value="login" onclick="this.login.submit();"/>
+                </form>
+              </div>
+            </div>
+          </div>
+          <?php } else {?>
+          <div id="id9" style="height: 43px; left: 363px; position: absolute; top: 17px; width: 251px; z-index: 1; " class="style_SkipStroke shape-with-text">
+          <div class="text-content style_External_251_43" style="padding: 0px; ">
+          <div class="style">
+          Hello <?php echo $_SESSION['user'];?>!!!
+                <form name="logout" action="logout.php" method="post">
+                <input type="submit" name="logout_btn" value="logout" onclick="this.logout.submit();"/>
+                </form>
+          </div>
+          </div>
+          </div>
+          <?php }?>
+
+        </div>
+        <div style="margin-left: 0px; position: relative; width: 700px; z-index: 5; " id="body_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper">Ê</div>
+          <div style="height: 1px; line-height: 1px; " class="tinyText">Ê</div>
+          <div style="margin-left: 290px; margin-top: 372px; position: relative; width: 400px; z-index: 1; " class="style_SkipStroke_1 shape-with-text flowDefining">
+            <div class="text-content style_External_400_35" style="padding: 0px; ">
+              <div class="style_1">
+                <p style="padding-bottom: 0pt; padding-top: 0pt; " class="Body">Reviews by You and For You</p> <br/><br/>
+                <p style="padding-bottom: 0pt; padding-top: 0pt; " class="Title">Your reviews</p> <br/>
+                <?php if (isset($_SESSION['userid'])) {
+                	$userdao = new UserDAO();
+                	$result = $userdao->get_user_reviews($_SESSION['userid']);
+                	?>
+                	<table>
+                	<tr><th>Movie</th><th>Review</th><th>Rating</th></tr>
+                	<?php
+                	foreach($result as $db_result) { ?>
+                	<tr><td><a href="summary.php?movieid=<?php echo $db_result['movieid']?>"><?php echo $db_result['movie_name'] ?></a> </td>
+                	<td><?php echo $db_result['review'] ?> </td>
+                	<td><?php echo $db_result['rating']?> </td>
+                	</tr>
+                	<?php } ?>
+                	</table>
+                	<br/><br/>
+                <?php } ?>
+              </div>
+              <div style="height: 18px; line-height: 18px; " class="tinyText">Ê</div>
+            </div>
+          </div>
+          
+
+
+          <div id="id2" style="height: 24px; left: 290px; position: absolute; top: 336px; width: 400px; z-index: 1; " class="style_SkipStroke_2 shape-with-text">
+            <div class="text-content Normal_External_400_24" style="padding: 0px; ">
+              <div class="Normal">
+                <p style="padding-bottom: 0pt; padding-top: 0pt; " class="Title">Welcome to Hummingtown</p>
+              </div>
+            </div>
+          </div>
+          
+
+
+          <div style="height: 280px; width: 399px;  height: 280px; left: 286px; position: absolute; top: 18px; width: 399px; z-index: 1; " class="tinyText stroke_0">
+            <div style="position: relative; width: 399px; ">
+              <img src="Welcome_files/shapeimage_1.png" alt="" style="height: 280px; left: 0px; position: absolute; top: 0px; width: 399px; " />
+            </div>
+          </div>
+          
+
+
+          <div id="id3" style="height: 120px; left: 10px; position: absolute; top: 370px; width: 270px; z-index: 1; " class="style_SkipStroke_3 shape-with-text">
+            <div class="text-content style_External_270_120" style="padding: 0px; ">
+              <div class="style_2">
+                <p style="padding-bottom: 0pt; padding-top: 0pt; " class="Quote">Eliquatuero dip numsan vent lam, conum facillum init lut doloreet ullam etuero od tet adit, comm od tatummy dolorti et volore.</p>
+              </div>
+            </div>
+          </div>
+          
+
+
+          <div style="height: 395px; width: 260px;  height: 395px; left: 15px; position: absolute; top: 172px; width: 260px; z-index: 1; " class="tinyText stroke_1">
+            <div style="position: relative; width: 260px; ">
+              <img src="Welcome_files/shapeimage_2.png" alt="" style="height: 395px; left: 0px; position: absolute; top: 0px; width: 260px; " />
+            </div>
+          </div>
+          
+
+
+          <div style="height: 140px; width: 260px;  height: 140px; left: 16px; position: absolute; top: 18px; width: 259px; z-index: 1; " class="tinyText stroke_2">
+            <div style="position: relative; width: 259px; ">
+              <img src="Welcome_files/shapeimage_3.png" alt="" style="height: 140px; left: 0px; margin-left: 1px; position: absolute; top: 0px; width: 259px; " />
+            </div>
+          </div>
+          
+          
+          <div style="height: 82px; line-height: 82px; " class="spacer">Ê</div>
+        </div>
+        <div style="height: 75px; margin-left: 0px; position: relative; width: 700px; z-index: 15; " id="footer_layer">
+          <div style="height: 0px; line-height: 0px; " class="bumper">Ê</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+
